@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "PressStart";
+  src: url("../fonts/PressStart2P-Regular.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "PressStart", "cursive";
+  text-transform: uppercase;
+  text-align: center;
+  user-select: none;
+}
+
+.content {
+  height: 100vh;
+  background: #011F3F;
+  overflow: auto;
+
+  .title {
+    font-size: 3rem;
+    color: #FEF2BF;
+    padding: 3% 0;
+
+    span {
+      color: yellow;
+      font-size: 5rem;
+    }
+  }
+
+  .game-boxes {
+    display: grid;
+    grid-template-rows: repeat(2, 200px);
+    grid-template-columns: repeat(3, 200px);
+    grid-gap: 50px;
+    justify-content: center;
+    padding: 3% 0;
+
+    div {
+      width: 200px;
+      height: 200px;
+      // flex布局可以令WASD文字水平垂直居中，实现垂直居中嘅时候尽量唔好用line-height，呢个主要系设定行高
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: white;
+      border-radius: 50px;
+      border: solid 10px black;
+      margin: 0 auto;
+    }
+
+    .red {
+      grid-row: 1/2;
+      grid-column: 2/3;
+      background: red;
+    }
+
+    .green {
+      grid-row: 2/3;
+      grid-column: 1/2;
+      background: green;
+    }
+
+    .blue {
+      grid-row: 2/3;
+      grid-column: 2/3;
+      background: blue;
+    }
+
+    .orange {
+      grid-row: 2/3;
+      grid-column: 3/4;
+      background: orange;
+    }
+
+    // 方块被选中后的效果
+    .keypress {
+      box-shadow: 0 3px 4px 0 #DBEDF3;
+      opacity: .5;
+    }
+  }
+
+  .footer {
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    font-size: 1.5rem;
+    color: yellow;
+    background: purple;
+    padding: 1% 0;
+  }
+}
+
+// 玩家出错时背景变红
+.red {
+  background: red;
+}
